@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/css/app.css',
     'resources/js/app.js'])
-    <title>{{$title ?? "Coquette - 
+    <title>{{$title ?? "Roses - 
         Tudo sobre girlies"}}</title>
 </head>
 
@@ -16,7 +16,7 @@
             <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <a href="{{route('home')}}" class="flex items-center">
                     <img src="{{asset('imagens/logo.png')}}" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Coquette</span>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Roses</span>
                 </a>
                 <div class="flex items-center lg:order-2">
                     @auth
