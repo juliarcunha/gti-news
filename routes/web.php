@@ -8,7 +8,9 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('home');
+    
+    $noticias = Noticia::orderBy('id', 'desc')->paginate(6);
+    return view('home', compact('noticias'));
 })->name('home');
 
 Route::view('/teste', 'tela-teste');
@@ -16,6 +18,10 @@ Route::view('/teste', 'tela-teste');
 Route::view('/cadastro', 'tela-cadastro')->name('telaCadastro');
 
 Route::view('/login', 'login')->name('login');
+
+Route::view('/blog', 'tela-blog')->name('blog');
+
+Route::view('/contato', 'tela-contato')->name('contato'); 
 
 Route::post(
     '/salva-usuario',
@@ -66,11 +72,11 @@ Route::get(
     '/gerencia-noticias',
     function () {
 
-        $noticias = Noticia::orderBy('id', 'desc')->get();
+        $noticias = Noticia::orderBy('id', 'desc')->paginate(6);
 
         return view('gerencia-noticias', compact('noticias'));
     }
-)->name('gerenciaNoticias');
+)->name('gerenciaNoticias')->middleware('auth');
 
 
 
@@ -82,7 +88,7 @@ Route::get(
 
         return view('cadastra-noticia', compact('noticia'));
     }
-)->name('cadastraNoticia');
+)->name('cadastraNoticia')->middleware('auth');
 
 
 Route::post(
@@ -102,7 +108,7 @@ Route::post(
 
         return redirect()->route('gerenciaNoticias');
     }
-)->name('SalvaNoticia');
+)->name('SalvaNoticia')->middleware('auth');
 
 
 Route::get(
@@ -113,7 +119,7 @@ Route::get(
 
         return view('exibe-noticia', compact('noticia'));
     }
-)->name('exibeNoticia');
+)->name('exibeNoticia')->middleware('auth');
 
 
 Route::get(
@@ -124,7 +130,7 @@ Route::get(
 
         return view('edita-noticia', compact('noticia'));
     }
-)->name('editaNoticia');
+)->name('editaNoticia')->middleware('auth');
 
 
 Route::post(
@@ -143,7 +149,7 @@ Route::post(
 
         return redirect()->route('gerenciaNoticias');
     }
-)->name('alteraNoticia');
+)->name('alteraNoticia')->middleware('auth');
 
 
 Route::get(
@@ -152,4 +158,6 @@ Route::get(
         $noticia->delete();
         return redirect()->route('gerenciaNoticias');
     }
-)->name('deletaNoticia');
+)->name('deletaNoticia')->middleware('auth');
+
+

@@ -43,19 +43,10 @@
                             <a href="{{route('home')}}" class="block py-2 pr-4 pl-3 text-white rounded bg-pink-400 lg:bg-transparent lg:text-pink-400 lg:p-0 dark:text-white" aria-current="page">Início</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-pink-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-400 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-400">Notícias</a>
+                            <a href="{{route('blog')}}" class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-pink-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-400 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-400">Blog</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-pink-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-400 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-400">Sobre o Curso</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-pink-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-400 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-400">Institucional</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-pink-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-400 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-400">Alunos de sucesso</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-pink-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-400 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-400">Contato</a>
+                            <a href="{{route('contato')}}" class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-pink-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-400 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-400">Contato</a>
                         </li>
                         @auth
                         @if(Auth::user()->cargo == 1)
